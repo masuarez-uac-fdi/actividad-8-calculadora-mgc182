@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="ajax.js" type="text/javascript"></script>
 </head>
 <body>
@@ -10,25 +12,27 @@
     <h2>Calculadora con PHP</h2>
   </div>
   
-  <div class="middle" style="background-color:black">
-   
-            <div class="formulario" > 
-                Numero 1: <input id="num1"type="number" name="numero1" >
-                Numero 2: <input id="num2" type="number" name="numero2">
-         
-             <div class="botones">
-                <input id="suma"     style= "margin:5px" type="button" value="Sumar" onclick="sumanum()" >
-                <input id="resta"    style= "margin:5px" type="button" value="Restar" >
-                <input id="multi"    style= "margin:5px" type="button" value="Multiplicar" >
-                <input id="division" style= "margin:5px" type="button" value="Dividir"> 
+  <div class="middle" style="background-color:black"> 
+
+       <div class="formulario" > 
+                Numero 1: <input id="num1"type="number" />
+                Numero 2: <input id="num2" type="number"/>
+           <div class="botones">
+
+                <input id="suma"     style= "margin:5px" type="button" value="Sumar" onclick="sumanum()" />
+                <input id="resta"    style= "margin:5px" type="button" value="Restar" onclick="restanum()">
+                <input id="multi"    style= "margin:5px" type="button" value="Multiplicar" onclick="multinum()">
+                <input id="division" style= "margin:5px" type="button" value="Dividir" onclick="divnum()"> 
       
             <div class="resultado">
-              El resultado es: <input id="result" type="number"  name="result" readonly >
+              El resultado es: <input id="result" type="number"  name="result" readonly /> 
+
             </div>
            </div>
         </div>
 </div>  
  
+  
   <div class="footer">
     <p>
       <h2>Diseño Web- Actividad 8</h2>
