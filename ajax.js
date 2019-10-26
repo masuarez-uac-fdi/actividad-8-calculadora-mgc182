@@ -2,10 +2,10 @@
 function sumanum() 
 {    
    
-    var num1= document.getElementById("num1");
-    var num2= document.getElementById("num2");
+  var val1 = $('#num1').val();
+  var val2 = $('#num2').val();
 
-  if (num1.value.length==0 || num2.value.length==0)
+  if (val1.length==0 || val2.length==0)
    
  { 
     alert("Uno o mas campos estan vacios")
@@ -13,16 +13,93 @@ function sumanum()
  else 
  {
    
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-      if (this.readyState === 4 && this.status === 200) {
-        console.log(this.responseText);
-        document.getElementById("result").value = this.responseText;
-      }
-    };
-    httpRequest.open("GET", "suma.php", true);
-    httpRequest.send();
+  $.ajax({
+    type: 'GET',
+    url: 'suma.php',
+    data: { num1: val1, num2: val2 },
+    success: function(response) {
+        $('#result').val(response);
+    } 
+  }); 
+
+  }
+  }
+
+  function restanum() 
+  {    
+     
+    var val1 = $('#num1').val();
+    var val2 = $('#num2').val();
+  
+    if (val1.length==0 || val2.length==0)
+     
+   { 
+      alert("Uno o mas campos estan vacios")
+   } 
+   else 
+   {
+     
+    $.ajax({
+      type: 'GET',
+      url: 'resta.php',
+      data: { num1: val1, num2: val2 },
+      success: function(response) {
+          $('#result').val(response);
+      } 
+    }); 
+  
+    }
+    }
+    
+function multinum() 
+{    
+   
+  var val1 = $('#num1').val();
+  var val2 = $('#num2').val();
+
+  if (val1.length==0 || val2.length==0)
+   
+ { 
+    alert("Uno o mas campos estan vacios")
+ } 
+ else 
+ {
+   
+  $.ajax({
+    type: 'GET',
+    url: 'multi.php',
+    data: { num1: val1, num2: val2 },
+    success: function(response) {
+        $('#result').val(response);
+    } 
+  }); 
+
   }
   }
   
+function divnum() 
+{    
+   
+  var val1 = $('#num1').val();
+  var val2 = $('#num2').val();
+
+  if (val1.length==0 || val2.length==0)
+   
+ { 
+    alert("Uno o mas campos estan vacios")
+ } 
+ else 
+ {
+   
+  $.ajax({
+    type: 'GET',
+    url: 'div.php',
+    data: { num1: val1, num2: val2 },
+    success: function(response) {
+        $('#result').val(response);
+    } 
+  }); 
+
+  }
+  }
    
